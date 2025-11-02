@@ -81,13 +81,13 @@ cd Dashboard
 
 Create a virtual environment and install dependencies:
 
+Code:
 python -m venv venv
-venv\Scripts\activate     # (Windows)
+venv\Scripts\activate  # (Windows)
 pip install flask requests paho-mqtt
 
 
 Run the Flask app:
-
 python app.py
 
 
@@ -99,6 +99,7 @@ You’ll see your dashboard running ✅
 
 Open a new terminal.
 
+Code:
 cd IoT_Code
 python -m venv venv_iot
 venv_iot\Scripts\activate
@@ -113,6 +114,7 @@ Go back to the dashboard tab — you’ll see sensor data appear.
 
 Open another terminal.
 
+Code:
 cd AI_Model
 python -m venv venv_ai
 venv_ai\Scripts\activate
