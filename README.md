@@ -51,7 +51,7 @@ docs/           → Presentations and system architecture
 ---
 
 ## 💻 How to Run
-Step 1 — Download your ZIP (if not already)
+🧠 Step 1 — Download your ZIP (if not already)
 
 On GitHub, click on Smart-Construction-Monitoring-full.zip.
 
