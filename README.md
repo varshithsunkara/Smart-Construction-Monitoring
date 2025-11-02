@@ -51,84 +51,75 @@ docs/           → Presentations and system architecture
 ---
 
 ## 💻 How to Run
-🧠 Step 1 — Download your ZIP (if not already)
+### 🧠 Step 1 — Download the Project
+1. On GitHub, click on **Smart-Construction-Monitoring-full.zip**.
+2. Click **Download ZIP** and extract it on your computer.
 
-On GitHub, click on Smart-Construction-Monitoring-full.zip.
-
-Click Download.
-
-Extract it on your computer (e.g., Desktop or Documents folder).
-
-⚙️ Step 2 — Open the project folder
-
-After extracting, you’ll see:
-
+You will see the following structure:
+```
 AI_Model/
 IoT_Code/
 Dashboard/
 docs/
 requirements.txt
 setup_instructions.txt
+```
 
-💻 Step 3 — Run the Dashboard
+---
 
-Open VS Code or Command Prompt / Terminal.
+### ⚙️ Step 2 — Run the Dashboard
+1. Open **VS Code** or **Command Prompt / Terminal**.
+2. Navigate to the Dashboard folder:
+   ```bash
+   cd Dashboard
+   ```
+3. Create a virtual environment and install dependencies:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate     # (Windows)
+   pip install flask requests paho-mqtt
+   ```
+4. Run the Flask app:
+   ```bash
+   python app.py
+   ```
+5. Open your browser and go to 👉 **http://localhost:5000**
+   You’ll see your dashboard running ✅
 
-Navigate to the Dashboard folder:
+---
 
-cd Dashboard
+### 🌡️ Step 3 — Simulate IoT Sensors
+1. Open a **new terminal**.
+   ```bash
+   cd IoT_Code
+   python -m venv venv_iot
+   venv_iot\Scripts\activate
+   pip install paho-mqtt requests
+   python publish_test.py
+   ```
+   You’ll see “Published …” messages.
+   Go back to the dashboard — sensor data will appear.
 
+---
 
-Create a virtual environment and install dependencies:
+### 🧠 Step 4 — Run the AI Detection (optional)
+1. Open another terminal.
+   ```bash
+   cd AI_Model
+   python -m venv venv_ai
+   venv_ai\Scripts\activate
+   pip install -r requirements-ai.txt
+   python detect.py
+   ```
+   This opens a webcam or uses `demo.mp4` to detect objects.
+   Detected objects will be sent to the dashboard.
 
-Code:
-python -m venv venv
-venv\Scripts\activate  # (Windows)
-pip install flask requests paho-mqtt
+---
 
+### ✅ Step 5 — Done!
+Your **AI + IoT + Dashboard** system is now running live.
+All detections and alerts update in real time!
 
-Run the Flask app:
-python app.py
-
-
-Open your browser and go to 👉 http://localhost:5000
-
-You’ll see your dashboard running ✅
-
-🌡️ Step 4 — Simulate IoT Sensors
-
-Open a new terminal.
-
-Code:
-cd IoT_Code
-python -m venv venv_iot
-venv_iot\Scripts\activate
-pip install paho-mqtt requests
-python publish_test.py
-
-
-You’ll see “Published …” messages.
-Go back to the dashboard tab — you’ll see sensor data appear.
-
-🧠 Step 5 — Run the AI Detection (optional)
-
-Open another terminal.
-
-Code:
-cd AI_Model
-python -m venv venv_ai
-venv_ai\Scripts\activate
-pip install -r requirements-ai.txt
-python detect.py
-
-
-It will open a webcam window or use demo.mp4 if present.
-Detected objects will be sent to the dashboard.
-
-✅ Step 6 — Done!
-
-Now your AI + IoT + Dashboard system is running live.
-All alerts and detections update every few seconds in your browser.
 
 ## 🧠 Future Scope
 - Integration with BIM & GIS data  
