@@ -50,28 +50,83 @@ docs/           → Presentations and system architecture
 
 ---
 
-## 🎥 Demo Video
-*(Add your YouTube/Drive demo link here)*
-
----
-
 ## 💻 How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/Smart-Construction-Monitoring.git
-   cd Smart-Construction-Monitoring
-   ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the dashboard:
-   ```bash
-   python Dashboard/app.py
-   ```
-4. Open your browser and go to `http://localhost:5000`
+Step 1 — Download your ZIP (if not already)
 
----
+On GitHub, click on Smart-Construction-Monitoring-full.zip.
+
+Click Download.
+
+Extract it on your computer (e.g., Desktop or Documents folder).
+
+⚙️ Step 2 — Open the project folder
+
+After extracting, you’ll see:
+
+AI_Model/
+IoT_Code/
+Dashboard/
+docs/
+requirements.txt
+setup_instructions.txt
+
+💻 Step 3 — Run the Dashboard
+
+Open VS Code or Command Prompt / Terminal.
+
+Navigate to the Dashboard folder:
+
+cd Dashboard
+
+
+Create a virtual environment and install dependencies:
+
+python -m venv venv
+venv\Scripts\activate     # (Windows)
+pip install flask requests paho-mqtt
+
+
+Run the Flask app:
+
+python app.py
+
+
+Open your browser and go to 👉 http://localhost:5000
+
+You’ll see your dashboard running ✅
+
+🌡️ Step 4 — Simulate IoT Sensors
+
+Open a new terminal.
+
+cd IoT_Code
+python -m venv venv_iot
+venv_iot\Scripts\activate
+pip install paho-mqtt requests
+python publish_test.py
+
+
+You’ll see “Published …” messages.
+Go back to the dashboard tab — you’ll see sensor data appear.
+
+🧠 Step 5 — Run the AI Detection (optional)
+
+Open another terminal.
+
+cd AI_Model
+python -m venv venv_ai
+venv_ai\Scripts\activate
+pip install -r requirements-ai.txt
+python detect.py
+
+
+It will open a webcam window or use demo.mp4 if present.
+Detected objects will be sent to the dashboard.
+
+✅ Step 6 — Done!
+
+Now your AI + IoT + Dashboard system is running live.
+All alerts and detections update every few seconds in your browser.
 
 ## 🧠 Future Scope
 - Integration with BIM & GIS data  
